@@ -31,16 +31,15 @@ function post_data(playlist_track_data) {
     }
 }
 
-function get_data(database_object_id) {
+async function get_data(database_object_id) {
     if (!isValidObjectId(database_object_id)) {
         return JSON.stringify
             ({ "error": "Can't fetch playlist data", "code": 1 })
     }
-    const get_desired_data_count = data.findOne({ "_id": database_object_id }).count();
-    console.log(get_desired_data_count)
-    if (get_desired_data_count) {
+    let get_desired_data = await data.findOne({ "_id": database_object_id });
+    if (!get_desired_data) {
         return JSON.stringify
-            ({ "error": "Can't fetch playlist data" , "code": 2,"count":get_desired_data_count })
+            ({ "error": "Can't fetch playlist data" , "code": 2})
 }
 const return_data = data.findOne({ "_id": database_object_id });
 return return_data;
