@@ -19,13 +19,13 @@ app.use(router);
 
  
 
-mongoose.connect(process.env.MONGODB_URI)
-.then(()=>{
-    console.log("Database connected!")
-    app.listen(process.env.PORT || 4000,()=>{
-        console.log("Listening at: ",process.env.PORT || 4000);
-    })
-})
-.catch((err)=>{
-    console.log(err)
-})
+// mongoose.connect(process.env.MONGODB_URI)
+// .then(()=>{
+//     console.log("Database connected!")
+//     app.listen(process.env.PORT || 4000,()=>{
+//         console.log("Listening at: ",process.env.PORT || 4000);
+//     })
+// })
+// .catch((err)=>{
+//     console.log(err)
+// })
