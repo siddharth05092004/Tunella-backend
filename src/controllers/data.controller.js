@@ -32,11 +32,11 @@ function post_data(playlist_track_data){
 
 function get_data(database_object_id){
     if(!isValidObjectId(database_object_id)){return JSON.stringify
-        ({"error":"Can't fetch playlist data"})}
+        ({"error":"Can't fetch playlist data"},{"code":1})}
         const get_desired_data_count = data.findOne({"_id":database_object_id}).count();
         
         if(get_desired_data_count){return JSON.stringify
-            ({"error":"Can't fetch playlist data"})}
+            ({"error":"Can't fetch playlist data"},{"code":2})}
         return data.findOne({"_id":database_object_id});
     
 }
