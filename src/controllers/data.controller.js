@@ -42,7 +42,8 @@ function get_data(database_object_id) {
         return JSON.stringify
             ({ "error": "Can't fetch playlist data" , "code": 2 })
 }
-return data.findOne({ "_id": database_object_id });
+const return_data = data.findOne({ "_id": database_object_id });
+return return_data;
     
 }
 
