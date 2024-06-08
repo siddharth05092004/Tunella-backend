@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const {post_data,get_data} = require('./../controllers/data.controller.js')
 
-router.get('/',(req,res)=>{res.send("Tunella backend"})
+router.get('/',(req,res)=>{res.send("Tunella backend")})
 
 
 router.get('/:id',async(req,res)=>{
