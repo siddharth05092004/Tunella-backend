@@ -38,7 +38,7 @@ function get_data(database_object_id) {
     }
     const get_desired_data_count = data.findOne({ "_id": database_object_id }).count();
 
-    if (get_desired_data_count) {
+    if (!get_desired_data_count) {
         return JSON.stringify
             ({ "error": "Can't fetch playlist data" , "code": 2 })
 }
